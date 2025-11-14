@@ -1,12 +1,14 @@
 package com.example.reviewer_assignment_service.model.entity;
 
+import com.example.reviewer_assignment_service.model.links.PullRequestReview;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -16,7 +18,7 @@ import java.util.UUID;
 public class PullRequest {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "pull_request_id", updatable = false, nullable = false)
+    @Column(name = "id", updatable = false, nullable = false)
     private UUID id;
 
     @Column(name = "title", nullable = false)
@@ -24,15 +26,14 @@ public class PullRequest {
     @NotBlank
     private String title;
 
-    @Column(name = "author_id", nullable = false)
-    @NotBlank
-    private long authorId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "author_id", nullable = false)
+    private User author;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
-    @NotBlank
     private Status status;
 
-    @Column(name = "reviewer_ids")
-    @Size(max=2)
-    private ArrayList<Long> reviewerIds;
+    @OneToMany(mappedBy = "pullRequest", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<PullRequestReview> reviews = new HashSet<>();
 }

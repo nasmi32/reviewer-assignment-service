@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class TeamController {
     private final TeamService teamService;
 
-    @PostMapping("/add")
-    public ResponseEntity<TeamResponseDto> addTeam(@Valid @RequestBody(required = true)TeamRequestDto) {
-
-    }
+//    @PostMapping("/add")
+//    public ResponseEntity<TeamResponseDto> addTeam(@Valid @RequestBody(required = true)TeamRequestDto) {
+//
+//    }
 }
