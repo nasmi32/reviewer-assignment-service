@@ -1,6 +1,6 @@
 package com.example.reviewer_assignment_service.controller;
 
-import com.example.reviewer_assignment_service.model.dto.*;
+import com.example.reviewer_assignment_service.model.dto.pullRequest.*;
 import com.example.reviewer_assignment_service.service.PullRequestService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

@@ -1,8 +1,9 @@
-package com.example.reviewer_assignment_service.model.dto;
+package com.example.reviewer_assignment_service.model.dto.pullRequest;
 
+
+import com.example.reviewer_assignment_service.model.entity.Status;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,10 +16,9 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class PullRequestReassignDto {
-    @NotNull
+public class FullPullRequestDto {
     private UUID pullRequestId;
-
-    @NotNull
-    private UUID oldReviewerId;
+    private String pullRequestName;
+    private UUID authorId;
+    private Status status;
 }

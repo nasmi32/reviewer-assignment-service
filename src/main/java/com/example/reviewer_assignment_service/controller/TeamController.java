@@ -1,8 +1,7 @@
 package com.example.reviewer_assignment_service.controller;
 
-import com.example.reviewer_assignment_service.model.dto.TeamDto;
-import com.example.reviewer_assignment_service.model.dto.TeamResponseDto;
-import com.example.reviewer_assignment_service.model.entity.Team;
+import com.example.reviewer_assignment_service.model.dto.team.TeamDto;
+import com.example.reviewer_assignment_service.model.dto.team.TeamResponseDto;
 import com.example.reviewer_assignment_service.service.TeamService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

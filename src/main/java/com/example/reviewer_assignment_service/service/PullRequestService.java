@@ -2,7 +2,7 @@ package com.example.reviewer_assignment_service.service;
 
 import com.example.reviewer_assignment_service.exceptions.ConflictException;
 import com.example.reviewer_assignment_service.exceptions.NotFoundException;
-import com.example.reviewer_assignment_service.model.dto.*;
+import com.example.reviewer_assignment_service.model.dto.pullRequest.*;
 import com.example.reviewer_assignment_service.model.entity.PullRequest;
 import com.example.reviewer_assignment_service.model.entity.Status;
 import com.example.reviewer_assignment_service.model.entity.User;

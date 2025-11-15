@@ -1,4 +1,4 @@
-package com.example.reviewer_assignment_service.model.dto;
+package com.example.reviewer_assignment_service.model.dto.pullRequest;
 
 import com.example.reviewer_assignment_service.model.entity.Status;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
@@ -17,10 +17,11 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class PullRequestReassignResponseDto {
+public class PullRequestMergeResponseDto {
     private UUID pullRequestId;
     private String pullRequestName;
     private UUID authorId;
     private Status status;
     private List<UUID> assignedReviewers;
+    private OffsetDateTime mergedAt;
 }

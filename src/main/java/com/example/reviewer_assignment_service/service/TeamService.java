@@ -2,9 +2,9 @@ package com.example.reviewer_assignment_service.service;
 
 import com.example.reviewer_assignment_service.exceptions.ConflictException;
 import com.example.reviewer_assignment_service.exceptions.NotFoundException;
-import com.example.reviewer_assignment_service.model.dto.MemberDto;
-import com.example.reviewer_assignment_service.model.dto.TeamDto;
-import com.example.reviewer_assignment_service.model.dto.TeamResponseDto;
+import com.example.reviewer_assignment_service.model.dto.team.MemberDto;
+import com.example.reviewer_assignment_service.model.dto.team.TeamDto;
+import com.example.reviewer_assignment_service.model.dto.team.TeamResponseDto;
 import com.example.reviewer_assignment_service.model.entity.Team;
 import com.example.reviewer_assignment_service.model.entity.User;
 import com.example.reviewer_assignment_service.repository.TeamRepository;

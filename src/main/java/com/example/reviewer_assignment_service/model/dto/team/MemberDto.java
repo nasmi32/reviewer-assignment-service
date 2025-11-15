@@ -1,5 +1,6 @@
-package com.example.reviewer_assignment_service.model.dto;
+package com.example.reviewer_assignment_service.model.dto.team;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import jakarta.validation.constraints.NotBlank;
@@ -9,17 +10,21 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
+import java.util.UUID;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class TeamDto {
+public class MemberDto {
+    @NotNull
+    private UUID userId;
+
     @NotBlank
-    String teamName;
+    private String username;
 
     @NotNull
-    List<MemberDto> members;
+    @JsonProperty("is_active")
+    private boolean active;
 }

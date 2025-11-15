@@ -1,4 +1,4 @@
-package com.example.reviewer_assignment_service.model.dto;
+package com.example.reviewer_assignment_service.model.dto.pullRequest;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
@@ -12,6 +12,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class PRMergeResponseDto {
-    private PullRequestMergeResponseDto pr;
+public class PRResponseDto {
+    private PullRequestResponseDto pr;
 }
