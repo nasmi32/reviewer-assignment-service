@@ -1,0 +1,31 @@
+services:
+  db:
+    image: postgres:16
+    container_name: reviewer-db
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+    - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+  service:
+    build: .
+    container_name: reviewer-service
+    env_file:
+      - .env
+    environment:
+      DB_URL: db
+      DB_PORT: ${DB_PORT}
+      DB_NAME: ${DB_NAME}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+    depends_on:
+      - db
+    ports:
+    - "8080:8080"
+volumes:
+  db-data:
