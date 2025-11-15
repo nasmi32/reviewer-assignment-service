@@ -1,15 +1,13 @@
 package com.example.reviewer_assignment_service.model.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -17,14 +15,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class MemberDto {
-    @NotNull
+public class UserReviewsResponseDto {
     private UUID userId;
-
-    @NotBlank
-    private String username;
-
-    @NotNull
-    @JsonProperty("is_active")
-    private boolean active;
+    private List<FullPullRequestDto> pullRequests;
 }
