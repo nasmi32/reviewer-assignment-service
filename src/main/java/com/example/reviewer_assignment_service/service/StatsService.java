@@ -1,7 +1,7 @@
 package com.example.reviewer_assignment_service.service;
 
-import com.example.reviewer_assignment_service.model.dto.StatsResponseDto;
-import com.example.reviewer_assignment_service.model.dto.UserStats;
+import com.example.reviewer_assignment_service.model.dto.stats.StatsResponseDto;
+import com.example.reviewer_assignment_service.model.dto.stats.UserStats;
 import com.example.reviewer_assignment_service.model.entity.User;
 import com.example.reviewer_assignment_service.repository.PullRequestRepository;
 import com.example.reviewer_assignment_service.repository.PullRequestReviewRepository;
