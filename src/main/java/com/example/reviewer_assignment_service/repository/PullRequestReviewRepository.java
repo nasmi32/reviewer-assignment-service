@@ -19,4 +19,11 @@ public interface PullRequestReviewRepository extends JpaRepository<PullRequestRe
     List<UUID> findAllByPullRequestId(@Param("prId") UUID id);
 
     Optional<PullRequestReview> findByPullRequestIdAndUserId(UUID pullRequestId, UUID userId);
+
+    @Query("""
+        SELECT COUNT(prr)
+        FROM PullRequestReview prr
+        WHERE prr.user.id = :id
+    """)
+    long getReviewByReviewerId(UUID id);
 }
